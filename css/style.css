@@ -38,3 +38,12 @@ h4 {
 #start-button {
     font-size: 26px;
 }
+#back-button {
+    font-size: 26px;
+}
+.player-one {
+    width: 45px;
+    height: 45px;
+    left: 0;
+    bottom: 0;
+}
