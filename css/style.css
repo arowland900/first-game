@@ -37,13 +37,64 @@ h4 {
 }
 #start-button {
     font-size: 26px;
-}
+} 
+
+
+/*//////////////MAIN PAGE/////////////////*/
+
+
 #back-button {
     font-size: 26px;
 }
-.player-one {
-    width: 45px;
-    height: 45px;
-    left: 0;
-    bottom: 0;
+#gameboard {
+    float: left;
+    background: rgb(203, 255, 244);
+    height: 600px;
+    width: 1000px;
+    margin-top: 15px;
+    border-radius: 15px;
+    border: 2px solid black
 }
+#scoreboard {
+    float: left;
+    background: rgb(203, 255, 244);
+    font-size: 30px;
+    height: 600px;
+    width: 300px;
+    /* margin-top: 15px; */
+    margin: 15px 50px 50px 50px;
+}
+/* #gameboard {
+    position: relative;
+    height:600px;
+    width: 600px;
+    left: 10%;
+    right: 10%;
+} */
+
+.player-one-img {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: 230px;
+    cursor: pointer;
+    top: 360px;
+    left: 930px;
+}
+.player-two-img {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: 230px;
+    cursor: pointer;
+    top: 300px;
+    left: 10px;
+}
+
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
+
