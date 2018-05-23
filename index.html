@@ -11,28 +11,27 @@
 </head>
 <body>
     <main>
-        <!-- <h1>It's a Drought!</h1>
-        <h2>
-            The Counsel has allowed MoogleBook™ to take control of the water supply.....The rainy season is approaching, and MoogleBook™ is having issues with their water collecting technology.....Until their technology is debugged, we need you to gather as much water as you can.....But watch out! Some of the water may be contaminated.....The good people of The Holy Commonwealth need you. Godspeed!
-        </h2> -->
-        <img class='globe' src="Rotating_globe.gif" />
-        <br>
-        <div class="button-div">
-            <a href="main.html"><button id='begin-button'>BEGIN</button></a>
-        </div>
-        <h3> 
-            <p>Instructions</p>
-        </h3>
-        <h4>
-            <ul>
-                <li>As Player One, you can move left and right using the arrow keys. You must collect the clean BLUE droplets of water falling from the sky.</li>
-                <li>As Player Two, you can move left and right using "z" and "c".  You must collect the contaminated YELLOW droplets of water falling from the sky.</li>
-                <li>Be careful!  If player one collects even ONE YELLOW droplet, their whole bucket is contaminated</li>
-            </ul>
-        </h4>
-        
-        
+        <div style="display: flex; flex-direction: row">
+            <div class='globeholder' style="flex-direction: column; flex: 1"> 
+                <a href="main.html" id=''>
+                    <img class='globe' src="Rotating_globe.gif" />
+                    <div class="centered">START</div>
+                </a>
+            </div>
+            <div class='index-padding'style="flex-direction: column; flex: 1"> 
+                <h1>Instructions</h1>
+                <ul class='list'>
+                    <li>Work together to save the planet from toxic sludge!</li>
+                    <li>Player 1 collects clean water (smaller blue droplets), using the Left and Right arrow keys.</li>
+                    <li>Player 2 collects toxic sludge (larger yellow droplets), using the "Z" and "C" keys.</li>
+                    <li>If Player 2 misses any toxic sludge, score will be reduced.</li>
+                    <li>If player 1 collects any toxic sludge, score will be reduced.</li>
+                    <li>Collect enough clean water to save the planet!</li>
+                </ul>
+            </div>
+        </div>   
     </main>
+  
     <script src="js/main.js"></script>
 </body>
 </html>

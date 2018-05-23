@@ -19,54 +19,30 @@ var p2right = false
 
 $('body').on('keydown', function(event) {
     const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
-    if (930 > Number($playerOne.css("left").slice(0,-2))){
+    if (940 > Number($playerOne.css("left").slice(0,-2))){
          if (key === "ArrowRight") {
             // $playerOne.css("left", "+=20")
             p1right = true
         }
     }
-    // if (930 < Number($playerOne.css("left").slice(0,-2))){
-    //     if (key === "ArrowRight") {
-    //        // $playerOne.css("left", "+=20")
-    //        p1right = false
-    //    }
-    // }
     if(Number($playerOne.css("left").slice(0,-2)) > 20) {
         if (key === "ArrowLeft") {
             // $playerOne.css("left", "-=20")
             p1left = true
         } 
     }
-    // if(Number($playerOne.css("left").slice(0,-2)) < 20) {
-    //     if (key === "ArrowLeft") {
-    //         // $playerOne.css("left", "-=20")
-    //         p1left = false
-    //     } 
-    // }
-    if (930 > Number($playerTwo.css("left").slice(0,-2))){
+    if (940 > Number($playerTwo.css("left").slice(0,-2))){
         if (key === "c") {
             // $playerTwo.css("left", "+=30")
             p2right = true
         }
     }
-    // if (930 < Number($playerTwo.css("left").slice(0,-2))){
-    //     if (key === "c") {
-    //         // $playerTwo.css("left", "+=30")
-    //         p2right = false
-    //     }
-    // }
     if (Number($playerTwo.css("left").slice(0,-2)) > 20){
         if (key === "z") {
             // $playerTwo.css("left", "-=30")
             p2left = true
         } 
     }
-    // if (Number($playerTwo.css("left").slice(0,-2)) < 20){
-    //     if (key === "z") {
-    //         // $playerTwo.css("left", "-=30")
-    //         p2left = false
-    //     } 
-    // }
 });
 
 $('body').on('keyup', function(event) {
@@ -92,7 +68,7 @@ function RainSimulator() {
     })
     $gameboard.append($newRain);
     var rainMovement = setInterval(function() {
-        $newRain.css({top: '+=1.2px'});
+        $newRain.css({top: '+=1.2px' });
         if(($newRain.offset().top + $newRain.height()) > $gameboard.offset().top + $gameboard.height()) {
             $newRain.remove()
             clearInterval(rainMovement)
@@ -142,32 +118,20 @@ function DirtSimulator() {
         $newDirt.offset().top < ($playerTwo.offset().top + $playerTwo.height()) &&
         $newDirt.offset().top + $newDirt.height() > $playerTwo.offset().top){
             $newDirt.remove()
-            incrementer()
-            incrementer()
             clearInterval(dirtMovement)
         }
     }, 10);
 }
 
-// function AddWater() {
-//     var $newWater = $('<div>').addClass('water')
-//     if (incrementer){ 
-//         $bucket.append($newWater);
-//     }
-//     else if (decrementer){
-//         $bucket.remove($newWater);
-//     }
-// }
-  
 function startGame() {
     $startButton.off("click", startGame)
     var moreDirt = setInterval(DirtSimulator, 2700)
-    var moreRain = setInterval(RainSimulator, 1500)
+    var moreRain = setInterval(RainSimulator, 1300)
     var myTimer = setInterval(function(){
         timeLeft -= 1
         $timer.html('Time Left: '+ timeLeft)
         if (timeLeft === 0){
-            if (scoreNum >= 50){
+            if (scoreNum >= 25){
                 winAlert()
             }
             else {
@@ -179,6 +143,7 @@ function startGame() {
             clearInterval(movementInterval)
             $('.blue-box').remove()
             $('.yellow-box').remove()
+            $water.animate({height: 0})
             timeLeft = 60
             $timer.html('Time Left: '+ timeLeft)
             scoreNum = 0
@@ -187,13 +152,16 @@ function startGame() {
         }
     },1000);
     movementInterval = setInterval(function(){
-        if(p1right) $playerOne.css("left", "+=1.5")
+        if(p1right) $playerOne.css("left", "+=2")
         if($playerOne.css("left") == "940px") p1right = false
-        if(p1left) $playerOne.css("left", "-=1.5")
+
+        if(p1left) $playerOne.css("left", "-=2")
         if($playerOne.css("left") == "10px") p1left = false
-        if(p2right) $playerTwo.css("left", "+=1.5")
+
+        if(p2right) $playerTwo.css("left", "+=2")
         if($playerTwo.css("left") == "940px") p2right = false
-        if(p2left) $playerTwo.css("left", "-=1.5")
+
+        if(p2left) $playerTwo.css("left", "-=2")
         if($playerTwo.css("left") == "10px") p2left = false
     }, 1)
 }
@@ -202,22 +170,22 @@ $startButton.on("click", startGame)
 function incrementer (){
     scoreNum += 1 
     $score.html('Score: ' + scoreNum)
-    $water.animate({height: scoreNum*2 + '%'})
+    $water.animate({height: scoreNum*4 + '%'})
 }
 function decrementer (){
     scoreNum -= 1 
     $score.html('Score: ' + scoreNum)
-    $water.animate({height: scoreNum*2+ '%'})
+    $water.animate({height: scoreNum*4 + '%'})
 }
 function reset () {
     scoreNum = 0
     $score.html('Score: ' + scoreNum)
 }
 function winAlert () {
-    alert(`You collected ${scoreNum} clean water units! You saved the day!`)
+    alert(`You collected ${scoreNum} clean water units! You saved Earth!`)
 } 
 function loseAlert () {
-    alert(`Almost! You collected ${scoreNum} clean water units. Nice try.`)
+    alert(`You collected ${scoreNum} clean water units. You did't save earth :(.`)
 }
 
 
