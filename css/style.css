@@ -14,7 +14,7 @@ h2 {
     line-height: 40px
 }
 h3 p {
-    text-align: center;
+    text-align: left;
     /* font-style: italic; */
     font-weight: 600;
     font-size: 30px;
@@ -24,7 +24,7 @@ h3 p {
     text-decoration: underline;
 }
 h4 {
-    text-align: center;
+    text-align: left;
     /* font-style: italic; */
     font-weight: 400;
     font-size: 20px;
@@ -38,6 +38,12 @@ h4 {
 #begin-button {
     font-size: 26px;
 } 
+.globe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
 
 
 /*//////////////MAIN PAGE/////////////////*/
@@ -103,14 +109,14 @@ h4 {
     height: 25px;
     width: 25px;
     position: absolute;
-    background: blue;
+    background:linear-gradient( rgb(0, 4, 255), rgb(188, 255, 255) );
     border-radius: 100%;
 }
 .yellow-box {
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
     position: absolute;
-    background: yellow;
+    background:linear-gradient(rgb(223, 236, 39), rgb(120, 184, 47));
     border-radius: 100%;
 }
 
@@ -122,12 +128,16 @@ h4 {
     width: 300px;
     /* margin-top: 15px; */
     margin: 13px 50px 50px 50px;
+    position: relative;
 }
 .water {
-    height: 11px;
+    position: absolute;
+    bottom: 0;
+    height: 0%;
     width: 300px;
-    background: lightcyan
+    background: rgb(0, 4, 255)
 }
+
 
 
 
