@@ -17,6 +17,14 @@ var p1right = false
 var p2left = false
 var p2right = false
 
+//Prevent moving window with Space and Arrow Keys
+document.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+
 $('body').on('keydown', function(event) {
     const key = event.key; // "ArrowRight", "ArrowLeft"
     if (940 > Number($playerOne.css("left").slice(0,-2))){
@@ -64,7 +72,7 @@ function RainSimulator() {
     })
     $gameboard.append($newRain);
     var rainMovement = setInterval(function() {
-        $newRain.css({top: '+=2px' });
+        $newRain.css({top: '+=2.5px' });
         if(($newRain.offset().top + $newRain.height()) > $gameboard.offset().top + $gameboard.height()) {
             $newRain.remove()
             decrementer()
@@ -124,7 +132,7 @@ function DirtSimulator() {
 function startGame() {
     $startButton.off("click", startGame)
     var moreDirt = setInterval(DirtSimulator, 2500)
-    var moreRain = setInterval(RainSimulator, 700)
+    var moreRain = setInterval(RainSimulator, 800)
     var myTimer = setInterval(function(){
         timeLeft -= 1
         $timer.html('Time: '+ timeLeft)
@@ -150,10 +158,10 @@ function startGame() {
         }
     },1000);
     movementInterval = setInterval(function(){
-        if(p1right) $playerOne.css("left", "+=3")
+        if(p1right) $playerOne.css("left", "+=2.5")
         if($playerOne.css("left") == "940px") p1right = false
 
-        if(p1left) $playerOne.css("left", "-=3")
+        if(p1left) $playerOne.css("left", "-=2.5")
         if($playerOne.css("left") == "10px") p1left = false
 
         if(p2right) $playerTwo.css("left", "+=2.5")
