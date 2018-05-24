@@ -52,9 +52,6 @@ h1 {
 
 #timer {
     font-size: 60px;
-    animation-name: colorChange;
-    animation-duration: 90s;
-    animation-delay: 9s;
 }
 @keyframes colorChange {
     from {color: black;}

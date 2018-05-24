@@ -136,6 +136,11 @@ function startGame() {
     var myTimer = setInterval(function(){
         timeLeft -= 1
         $timer.html('Time: '+ timeLeft)
+        $timer.css({
+            "animation-name": 'colorChange',
+            'animation-duration': '90s',
+            'animation-delay': '9s'
+        });
         if (timeLeft === 0){
             if (scoreNum >= 100){
                 winAlert()

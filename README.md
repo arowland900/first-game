@@ -17,7 +17,14 @@ This game was created using JavaScript, JQuery, HTML, and CSS.
 
 <img src='game_screenshot.png'>
 
+### Original Wireframe
+<img src='wireframe.png'>
 
+### Backlog
+
+The biggest issue that I had with creating this game was getting both of the players to be able to move simultaneously without any hiccups.  After learning more about the keyup and keydown events I was able to rewrite some code to fix this issue.  
+
+As I continue to work on this game, I would like to add varying difficulty, and possibly even new levels!
 
 ## Deployment
 
