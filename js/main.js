@@ -1,5 +1,3 @@
-console.log("working!")
-
 var $playerOne = $('.player-one-img')
 var $playerTwo = $('.player-two-img')
 
@@ -24,7 +22,7 @@ document.addEventListener("keydown", function(e) {
         e.preventDefault();
     }
 }, false);
-
+// when pressing key, character moves
 $('body').on('keydown', function(event) {
     const key = event.key; // "ArrowRight", "ArrowLeft"
     if (940 > Number($playerOne.css("left").slice(0,-2))){
@@ -48,7 +46,7 @@ $('body').on('keydown', function(event) {
         } 
     }
 });
-
+// when not pressing key, character does not move
 $('body').on('keyup', function(event) {
     const key = event.key;
     if (key === "ArrowRight") {
@@ -64,7 +62,7 @@ $('body').on('keyup', function(event) {
         p2left = false
     } 
 })
-
+// make rain fall from sky
 function RainSimulator() {
     var $newRain = $('<div>').addClass('blue-box')
     $newRain.css({
@@ -96,7 +94,7 @@ function RainSimulator() {
         // }
     }, 10);
 }
-
+// make toxic sludge fall from sky
 function DirtSimulator() {
     var $newDirt = $('<div>').addClass('yellow-box')
     $newDirt.css({
@@ -128,7 +126,7 @@ function DirtSimulator() {
         }
     }, 10);
 }
-
+// start the game!
 function startGame() {
     $startButton.off("click", startGame)
     var moreDirt = setInterval(DirtSimulator, 2500)
@@ -177,7 +175,7 @@ function startGame() {
     }, 1)
 }
 $startButton.on("click", startGame)
-
+//increment, decrement, and reset score
 function incrementer (){
     scoreNum += 1 
     $score.html('Score: ' + scoreNum)
@@ -194,6 +192,7 @@ function reset () {
     if (scoreNum <= 0) scoreNum = 0
     $score.html('Score: ' + scoreNum)
 }
+// alert for win or loss
 function winAlert () {
     alert(`Victory! Score: ${scoreNum}`)
 } 
