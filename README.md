@@ -15,7 +15,7 @@ This game was created using JavaScript, JQuery, HTML, and CSS.
 <li>If Player 1 misses any clean water, score will be reduced.</li>
 <li>Fill the container up with clean water to win!!</li>
 
-![image] (/Users/alexrowland/Desktop/Screen Shot 2018-05-24 at 11.24.03 AM.png)
+<img src='game_screenshot.png'>
 
 
 
