@@ -30,5 +30,5 @@ As I continue to work on this game, I would like to add varying difficulty, and 
 
 * JavaScript
 * JQuery
-* HTML
-* CSS
+* HTML5
+* CSS3
