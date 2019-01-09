@@ -36,8 +36,3 @@ You can access the game [here](https://arowland900.github.io/first-game/)!
 * JQuery
 * HTML
 * CSS
-
-
-## Acknowledgments
-
-* Thank you to Philippe, Zac, and the whole WDI_58 cohort for helping this project come to life!
