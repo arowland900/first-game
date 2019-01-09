@@ -1,6 +1,6 @@
 # CleanPlanet
 
-An interactive two-player web based game. 
+A two-player web based game. Click [here](https://arowland900.github.io/first-game/) to play!
 
 ## Overview
 
@@ -24,11 +24,7 @@ This game was created using JavaScript, JQuery, HTML, and CSS.
 
 The biggest issue that I had with creating this game was getting both of the players to be able to move simultaneously without any hiccups.  After learning more about the keyup and keydown events I was able to rewrite some code to fix this issue.  
 
-As I continue to work on this game, I would like to add varying difficulty, and possibly even new levels!
-
-## Deployment
-
-You can access the game [here](https://arowland900.github.io/first-game/)!
+As I continue to work on this game, I would like to add varying difficulty, and possibly new levels!
 
 ## Built With
 
